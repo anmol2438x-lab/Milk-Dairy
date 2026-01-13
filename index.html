@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Daily Milk</title>
+
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PWA REQUIRED (ALWAYS TOP) -->
+    <link rel="manifest" href="./pwa/manifest.json">
+    <meta name="theme-color" content="#1e88e5">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+
+<body>
+
+    <h1>🥛 Milk Calculator
+        <p>Developed By <span id="name">Λɴϻᴏʟ ᴋᴜϻᴀʀ</span>.</p>
+    </h1>
+
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <!-- MONTH + YEAR + DATE BAR -->
+    <div class="month-select-bar">
+        <div class="left-select">
+            <select id="monthSelect"></select>
+            <select id="yearSelect"></select>
+        </div>
+
+        <div class="today-inline">
+            <span id="todayDate"></span> | <span id="todayDay"></span>
+        </div>
+    </div>
+
+    <div id="calendar"></div>
+
+    <div class="calculator">
+        <h2>Milk Calculator</h2>
+        <div class="calc-line">
+            <input type="text" id="totalMilk" readonly placeholder="Total Milk (kg)">
+            <span class="multiply">×</span>
+            <input type="number" id="price" placeholder="Price per KG">
+            <button onclick="calculate()">CALCULATE</button>
+        </div>
+        <h3>Total Amount : ₹ <span id="result">0</span></h3>
+    </div>
+
+    <div class="report">
+        <h2>Reports</h2>
+        <button onclick="showReport()">📊 View Monthly + Yearly Report</button>
+        <button onclick="downloadMonthlyPDF()">📄 Download Monthly PDF</button>
+        <button onclick="downloadYearlyPDF()">📄 Download Yearly PDF</button>
+        <pre id="reportOutput"></pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

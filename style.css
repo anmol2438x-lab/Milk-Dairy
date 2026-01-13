@@ -1,0 +1,243 @@
+/* ---------- BASIC ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f7ff;
+    padding: 10px;
+    margin: 0;
+    transition: 0.3s;
+}
+
+h1 {
+    text-align: center;
+    color: #1e88e5;
+    font-size: 24px;
+}
+
+h3 {
+    color: red;
+    font-size: 16px;
+}
+
+#name {
+    color: #025306;
+}
+
+/* ---------- MONTH BAR ---------- */
+.month-select-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(rgb(100, 232, 239), rgb(5, 5, 4));
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left-select {
+    display: flex;
+    gap: 6px;
+}
+
+.month-select-bar select {
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    appearance: none;
+    background: #fff;
+}
+
+.today-inline {
+    font-size: 13px;
+    font-weight: bold;
+    color: #f9f7f9;
+    white-space: nowrap;
+}
+
+/* ---------- CALENDAR ---------- */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+}
+
+
+.day {
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.day input {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+
+/* ---------- CALCULATOR & REPORT ---------- */
+.calculator,
+.report {
+    background: white;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.calc-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.calc-line input {
+    flex: 1;
+    padding: 8px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.calc-line button {
+    padding: 8px 14px;
+    background: linear-gradient(rgb(202, 248, 34), rgb(5, 5, 4));
+    color: rgb(253, 253, 253);
+    border: none;
+    border-radius: 5px;
+}
+
+.multiply {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ---------- BUTTON ---------- */
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(rgb(254, 254, 253), rgb(5, 5, 4));
+    color: #111;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* ---------- REPORT ---------- */
+pre {
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+
+/* ---------- DARK MODE (FIXED) ---------- */
+.dark {
+    background: #121212;
+    color: #ffffff;
+}
+
+.dark h1 {
+    color: #90caf9;
+}
+
+.dark .month-select-bar {
+    background: #1f1f1f;
+}
+
+.dark .day,
+.dark .calculator,
+.dark .report {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark input,
+.dark select {
+    background: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+.dark .today-inline {
+    color: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .month-select-bar select {
+        font-size: 15px;
+        padding: 6px 8px;
+    }
+
+    .today-inline {
+        font-size: 12px;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 6px;
+    }
+
+    .calc-line {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .multiply {
+        text-align: center;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .month-select-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .month-select-bar select {
+        font-size: 14px;
+        padding: 6px 8px;
+        width: 100%;
+    }
+
+    .today-inline {
+        font-size: 11px;
+        align-self: flex-end;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 5px;
+        padding: 12px;
+    }
+
+    .calc-line {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .calc-line input,
+    .calc-line button {
+        width: 100%;
+    }
+}
