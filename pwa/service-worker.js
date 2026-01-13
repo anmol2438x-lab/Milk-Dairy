@@ -5,9 +5,10 @@ const FILES_TO_CACHE = [
   "../index.html",
   "../style.css",
   "../script.js",
-  "../icons/milk-icon-192.png",
-  "../icons/milk-icon-512.png",
+  "../icons/icon-192x192.png",
+  "../icons/icon-512x512.png",
 ];
+
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
